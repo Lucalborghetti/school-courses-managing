@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:attribute name="num" type="xs:integer" use="required"/>
+    <xs:attribute name="npa" type="xs:integer" use="required"/> 
+    
+    <xs:complexType name="rueType">
+        <xs:sequence>
+            <xs:element name="rue" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute ref="num" />
+    </xs:complexType>
+
+   <xs:complexType name="villeType">
+        <xs:sequence>
+            <xs:element name="ville" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute ref="npa" />
+    </xs:complexType>
+    
+    <xs:complexType name="adresseType">
+        <xs:all>
+            <xs:element name="rue" type="xs:string"/>
+            <xs:element name="ville" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:element name="adresse" type="adresseType" />
+</xs:schema>
+
